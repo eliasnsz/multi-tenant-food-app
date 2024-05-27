@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch src/http/server.ts",
+    "services:up": "docker compose up -d",
+    "services:down": "docker compose down",
+    "dev": "pnpm services:up && tsx watch src/http/server.ts",
     "lint:fix": "biome format --write src"
   },
   "keywords": [],
