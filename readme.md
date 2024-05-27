@@ -35,10 +35,3 @@
 3. [ ] Calcular Total do Pedido
 4. [ ] Registrar Pagamento do Pedido
 5. [ ] Validar Dados de Cadastro do Cliente
-
-### Casos de Uso de Entrega:
-
-1. [ ] Escolher Método de Entrega
-2. [ ] Calcular Frete
-3. [ ] Atribuir Entregador ao Pedido
-4. [ ] Rastrear Status de Entrega do Pedido
