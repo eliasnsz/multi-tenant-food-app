@@ -2,11 +2,11 @@ import { prisma } from "@/infra/prisma-client";
 import type { FastifyInstance } from "fastify";
 import type { ZodTypeProvider } from "fastify-type-provider-zod";
 import z from "zod";
-import { UnauthorizedError } from "../_errors";
+import { BadRequestError } from "../_errors";
 import { hash } from "bcryptjs";
 
 export async function resetPassword(app: FastifyInstance) {
-	app.withTypeProvider<ZodTypeProvider>().post(
+	app.withTypeProvider<ZodTypeProvider>().patch(
 		"/password/reset/:tokenId",
 		{
 			schema: {
@@ -29,7 +29,7 @@ export async function resetPassword(app: FastifyInstance) {
 			});
 
 			if (!passwordRecoveryToken) {
-				throw new UnauthorizedError("Token inválido");
+				throw new BadRequestError("Token inválido");
 			}
 
 			const passwordHash = await hash(newPassword, 6);
