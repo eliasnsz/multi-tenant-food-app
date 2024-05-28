@@ -2,7 +2,7 @@
 
 - [x] Should be able to create an account (email, name, and password)
 - [x] Should be able to authenticate using email & password
-- [ ] Should be able to recover password using email
+- [x] Should be able to recover password
 
 ### Restaurants
 

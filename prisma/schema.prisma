@@ -22,6 +22,7 @@ model User {
   updatedAt    DateTime @updatedAt @map("updated_at")
 
   member_on Member[]
+  token     Token[]
 
   @@map("users")
 }
@@ -38,6 +39,21 @@ model Member {
 
   @@unique([userId, restaurantId])
   @@map("members")
+}
+
+model Token {
+  id        String    @id @default(uuid())
+  type      TokenType
+  createdAt DateTime  @default(now()) @map("created_at")
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String
+
+  @@map("tokens")
+}
+
+enum TokenType {
+  PASSWORD_RECOVERY
 }
 
 model Restaurant {

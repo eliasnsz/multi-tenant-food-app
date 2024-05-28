@@ -35,5 +35,7 @@ export const globalErrorHandler: FastifyErrorHandler = async (
 
 	console.error(error);
 
-	reply.status(500).send({ message: "Internal server error" });
+	reply
+		.status(500)
+		.send({ name: "InternalServerError", message: error.message, status: 500 });
 };
