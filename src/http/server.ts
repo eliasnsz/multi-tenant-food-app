@@ -1,9 +1,7 @@
+import { env } from "@/shared/env";
 import fastify from "fastify";
-import { env } from "../shared/env";
 
 export const app = fastify();
-
-app.get("/", () => "Hello, world");
 
 app
 	.listen({
