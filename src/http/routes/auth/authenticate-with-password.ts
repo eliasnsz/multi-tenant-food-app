@@ -52,7 +52,7 @@ export async function authenticateWithPassword(app: FastifyInstance) {
 				},
 			);
 
-			return reply.status(200).send({ token });
+			return reply.status(201).send({ token });
 		},
 	);
 }
