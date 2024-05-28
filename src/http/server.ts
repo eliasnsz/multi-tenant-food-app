@@ -36,5 +36,5 @@ app
 	.then(
 		() =>
 			env.NODE_ENV !== "test" &&
-			console.log("🚀 Server running on 0.0.0.0:3333"),
+			console.log(`🚀 Server running on ${env.HOST}:${env.PORT}`),
 	);
