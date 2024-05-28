@@ -28,7 +28,7 @@ export const globalErrorHandler: FastifyErrorHandler = async (
 
 	if (error instanceof UnauthenticatedError) {
 		return reply.status(401).send({
-			name: "UnauthorizedError",
+			name: "UnauthenticatedError",
 			message: error.message,
 			status: 401,
 		});

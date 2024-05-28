@@ -33,4 +33,8 @@ app
 		port: env.PORT,
 		host: env.HOST,
 	})
-	.then(() => console.log("🚀 Server running on 0.0.0.0:3333"));
+	.then(
+		() =>
+			env.NODE_ENV !== "test" &&
+			console.log("🚀 Server running on 0.0.0.0:3333"),
+	);

@@ -9,7 +9,7 @@ export const auth = fastifyPlugin(async (app: FastifyInstance) => {
 		request.getCurrentUserId = async () => {
 			if (!request.headers.authorization) {
 				throw new UnauthenticatedError(
-					"Você precisa se autenticar para realizar essa ação",
+					"Você deve estar autenticado para realizar essa ação",
 				);
 			}
 

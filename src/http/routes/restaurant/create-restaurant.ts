@@ -14,7 +14,7 @@ export async function createRestaurant(app: FastifyInstance) {
 			{
 				schema: {
 					body: z.object({
-						name: z.string(),
+						name: z.string().min(1, { message: "Campo obrigatório" }),
 						subdomain: z
 							.string()
 							.max(63)

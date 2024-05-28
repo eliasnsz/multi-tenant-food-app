@@ -36,8 +36,6 @@ export async function requestPasswordRecovery(app: FastifyInstance) {
 
 			// todo: SEND TOKEN TO USER EMAIL
 
-			console.log({ PASSWORD_RECOVERY_TOKEN: token.id });
-
 			return reply.status(201).send();
 		},
 	);
