@@ -1,37 +1,48 @@
-### Casos de Uso do Cliente:
+### Authentication
 
-1. [ ] Realizar Pedido
-2. [ ] Visualizar Histórico de Pedidos
-3. [ ] Atualizar Perfil
-4. [ ] Recuperar Senha
+- [x] Should be able to create an account (email, name, and password)
+- [x] Should be able to authenticate using email & password
+- [ ] Should be able to recover password using email
 
-### Casos de Uso do Funcionário:
+### Restaurants
 
-1. [ ] Gerenciar Pedidos Pendentes
-2. [ ] Marcar Pedido como em Preparo
-3. [ ] Marcar Pedido como Concluído
-4. [ ] Visualizar Relatório de Vendas Diárias
+- [ ] Should be able to create a new restaurant
+- [ ] Should be able to get restaurants to which the user belongs
+- [ ] Should be able to update a restaurant
+- [ ] Should be able to shutdown a restaurant
 
-### Casos de Uso Administrativos:
+### Menu Management
 
-1. [ ] Adicionar Produto ao Catálogo
-2. [ ] Editar Produto no Catálogo
-3. [ ] Remover Produto do Catálogo
-4. [ ] Visualizar Relatório de Itens Mais Vendidos
+- [ ] Should be able to get menu items within a restaurant
+- [ ] Should be able to create a new menu item (name, price, category, description)
+- [ ] Should be able to update a menu item (name, price, category, description)
+- [ ] Should be able to delete a menu item
 
-### Casos de Uso de Autenticação e Autorização:
+### Order Management
 
-1. [ ] Cliente Faz Login
-2. [ ] Cliente Faz Logout
-3. [ ] Funcionário Faz Login
-4. [ ] Funcionário Faz Logout
-5. [ ] Cliente Acessa Área de Pedido
-6. [ ] Funcionário Acessa Painel de Controle
+- [ ] Should be able to receive online orders
+- [ ] Should update order status (e.g., received, preparing, ready, delivered)
+- [ ] Should notify customers of order status updates
+- [ ] Should manage order history
 
-### Casos de Uso do Sistema:
+### Customer Management
 
-1. [ ] Enviar Notificação por E-mail de Confirmação de Pedido
-2. [ ] Notificar Equipe da Cozinha sobre Novo Pedido
-3. [ ] Calcular Total do Pedido
-4. [ ] Registrar Pagamento do Pedido
-5. [ ] Validar Dados de Cadastro do Cliente
+- [ ] Should create and update customer profiles
+- [ ] Should manage customer addresses
+- [ ] Should view customer order history
+
+### Notification Management
+
+- [ ] Should send order confirmation emails
+- [ ] Should send order status updates
+
+### Admin Dashboard
+
+- [ ] Should provide an overview of business metrics
+- [ ] Should manage user accounts
+- [ ] Should monitor system health and usage
+
+### Security
+
+- [ ] Should ensure data encryption in transit and at rest
+- [ ] Should log and monitor access and changes
