@@ -10,6 +10,8 @@ const envSchema = z.object({
 	HOST: z.string().default("0.0.0.0"),
 	PORT: z.coerce.number().default(3333),
 
+	JWT_SECRET: z.string(),
+
 	POSTGRES_PASSWORD: z.string(),
 	POSTGRES_USER: z.string(),
 	POSTGRES_HOST: z.string().default("localhost"),

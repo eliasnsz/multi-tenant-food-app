@@ -6,17 +6,18 @@ import z from "zod";
 import { BadRequestError } from "../_errors";
 
 export async function createAccount(app: FastifyInstance) {
-	app.withTypeProvider<ZodTypeProvider>().route({
-		method: "POST",
-		url: "/users",
-		schema: {
-			body: z.object({
-				name: z.string(),
-				email: z.string().email(),
-				password: z.string().min(8),
-			}),
+	app.withTypeProvider<ZodTypeProvider>().post(
+		"/users",
+		{
+			schema: {
+				body: z.object({
+					name: z.string(),
+					email: z.string().email(),
+					password: z.string().min(8),
+				}),
+			},
 		},
-		handler: async (request, reply) => {
+		async (request, reply) => {
 			const { name, email, password } = request.body;
 
 			const userWithSameEmail = await prisma.user.findUnique({
@@ -39,5 +40,5 @@ export async function createAccount(app: FastifyInstance) {
 
 			return reply.status(201).send();
 		},
-	});
+	);
 }
