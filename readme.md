@@ -6,7 +6,7 @@
 
 ### Restaurants
 
-- [ ] Should be able to create a new restaurant
+- [x] Should be able to create a new restaurant
 - [ ] Should be able to get restaurants to which the user belongs
 - [ ] Should be able to update a restaurant
 - [ ] Should be able to shutdown a restaurant

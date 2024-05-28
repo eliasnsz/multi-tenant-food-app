@@ -1,6 +1,7 @@
 import type { FastifyInstance } from "fastify";
 import { ZodError } from "zod";
-import { BadRequestError, UnauthorizedError } from "./routes/_errors";
+import { BadRequestError } from "./routes/_errors";
+import { UnauthenticatedError } from "./routes/_errors/unauthenticated";
 
 type FastifyErrorHandler = FastifyInstance["errorHandler"];
 
@@ -25,7 +26,7 @@ export const globalErrorHandler: FastifyErrorHandler = async (
 		});
 	}
 
-	if (error instanceof UnauthorizedError) {
+	if (error instanceof UnauthenticatedError) {
 		return reply.status(401).send({
 			name: "UnauthorizedError",
 			message: error.message,
