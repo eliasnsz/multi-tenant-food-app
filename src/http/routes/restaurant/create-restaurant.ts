@@ -22,7 +22,7 @@ export async function createRestaurant(app: FastifyInstance) {
 								(value) => /^[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?$/.test(value),
 								{
 									message:
-										"O subdomínio deve ser conter somente letras, números e hifens.",
+										"O subdomínio deve ser conter somente letras, números e hifens",
 								},
 							),
 					}),
@@ -45,7 +45,7 @@ export async function createRestaurant(app: FastifyInstance) {
 				});
 
 				if (userAlreadyIsRestaurantOwner) {
-					throw new BadRequestError("Você só pode ter um restaurante.");
+					throw new BadRequestError("Você só pode ter um restaurante");
 				}
 
 				const anotherRestaurantWithSameSubdomain =
