@@ -11,6 +11,7 @@ import { globalErrorHandler } from "./error-handler";
 import { requestPasswordRecovery } from "./routes/auth/request-password-recovery";
 import { resetPassword } from "./routes/auth/reset-password";
 import { createRestaurant } from "./routes/restaurant/create-restaurant";
+import { checkDbHealthy } from "./routes/healthy/check-db-healthy";
 
 export const app = fastify();
 
@@ -20,6 +21,8 @@ app.setValidatorCompiler(validatorCompiler);
 app.setErrorHandler(globalErrorHandler);
 
 app.register(fastifyJwt, { secret: env.JWT_SECRET });
+
+app.register(checkDbHealthy);
 
 app.register(createAccount);
 app.register(authenticateWithPassword);
